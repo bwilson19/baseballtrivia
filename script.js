@@ -19,6 +19,7 @@ const muteButton = document.querySelector('#mute');
 const hitSound = document.querySelector('#hit-sound');
 const booSound = document.querySelector('#boo-sound');
 const highScoreCounter = document.querySelector('#high-score');
+const clearHighScoreButton = document.querySelector('#clear-score');
 
 let currentRuns = 0;
 let currentOuts = 0;
@@ -29,11 +30,20 @@ let zIndex = 0;
 let questionNumber = 1;
 let fieldNumber = 0;
 
-// preserve high score across sessions
-let highScore = localStorage.getItem('highScore') || 0;
+// preserve high score across sessions & clear score button
 
+let highScore = localStorage.getItem('highScore') || 0;
 highScoreCounter.innerHTML = 'High Score: ' + highScore;
 
+clearHighScoreButton.addEventListener('click', clearScore);
+
+function clearScore() {
+  highScore = 0;
+  highScoreCounter.innerHTML = 'High Score: ' + highScore;
+  localStorage.clear();
+}
+
+// field image arrays
 let fieldOptions = [
   'images/baseball0.png',
   'images/baseball1.png',
@@ -135,7 +145,6 @@ function startGame() {
 }
 
 // mute/play background music
-
 muteButton.addEventListener('click', muteMusic);
 
 function muteMusic() {

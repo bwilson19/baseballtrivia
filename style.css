@@ -194,7 +194,15 @@ header {
 }
 
 #high-score {
-  font-size: 12px;
+  font-size: 15px;
+  padding: 2px;
+}
+
+#clear-score {
+  width: 12%;
+  height: 12%;
+  margin-left: -20px;
+  padding: 0px;
 }
 /* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
 button {
