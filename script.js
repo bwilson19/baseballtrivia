@@ -23,10 +23,10 @@ let questionNumber = 1;
 let fieldNumber = 0;
 
 let fieldOptions = [
-  '/images/baseball0.png',
-  '/images/baseball1.png',
-  '/images/baseball2.png',
-  '/images/baseball3.png'
+  'images/baseball0.png',
+  'images/baseball1.png',
+  'images/baseball2.png',
+  'images/baseball3.png'
 ];
 
 //add event listeners to every question
