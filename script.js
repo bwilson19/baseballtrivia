@@ -13,6 +13,9 @@ const nextButton = document.querySelector('#next');
 const nextOverlay = document.querySelector('#next-overlay');
 const startGameButton = document.querySelector('#start');
 const startGameOverlay = document.querySelector('#start-game');
+const music = document.querySelector('#music');
+const muteButton = document.querySelector('#mute');
+const hitSound = document.querySelector ('#hit-sound');
 
 let currentRuns = 0;
 let currentOuts = 0;
@@ -46,11 +49,13 @@ function playerWins() {
   if (currentRunners >= 3) {
     runs.innerHTML = 'Runs: ' + (currentRuns += 1);
     nextOverlay.style.zIndex = 100;
+    hitSound.play();
   } else {
     currentRunners += 1;
     fieldNumber += 1;
     field.setAttribute('src', fieldOptions[fieldNumber]);
     nextOverlay.style.zIndex = 100;
+    hitSound.play();
   }
 }
 
@@ -103,4 +108,19 @@ function resetOverlay() {
 // start game overlay to begin game
 function startGame() {
   startGameOverlay.style.display = 'none';
+  music.play();
+}
+
+// mute background music
+
+muteButton.addEventListener('click', muteMusic);
+
+function muteMusic() {
+  if (music.muted == false) {
+    music.muted = true;
+    mute.setAttribute('src', 'images/play.png');
+  } else {
+    music.muted = false;
+    mute.setAttribute('src', 'images/mute.png');
+  }
 }

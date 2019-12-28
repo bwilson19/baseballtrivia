@@ -4,6 +4,7 @@ body {
   background-size: cover;
   background-color: black;
   font-family: 'Graduate', cursive;
+  overflow: hidden;
 }
 
 header {
@@ -14,7 +15,7 @@ header {
   background-color: rgb(18, 139, 2, 0.3);
   padding: 20px 0px;
 }
-#diamond img {
+#field {
   width: 95%;
   position: relative;
   z-index: 1;
@@ -78,7 +79,7 @@ header {
 
 .multiple-choice {
   list-style: none;
-  width: 60%;
+  width: 65%;
 }
 
 .multiple-choice li {
@@ -159,6 +160,14 @@ header {
 #start {
   width: 250px;
   cursor: pointer;
+}
+
+#mute {
+  width: 40px;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  z-index:2;
 }
 
 /* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
@@ -278,9 +287,9 @@ button:hover::after {
   }
 
   .multiple-choice li {
-    font-size: 15px;
+    font-size: 13px;
     height: 30px;
-    width: 80%;
+    width: 100%;
   }
 
   .letters img {
