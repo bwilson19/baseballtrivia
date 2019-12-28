@@ -1,0 +1,280 @@
+body {
+  margin: 0px;
+  background-image: url(/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  font-family: 'Graduate', cursive;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  background-color: rgb(18, 139, 2, 0.3);
+  padding: 20px 0px;
+}
+#diamond img {
+  width: 95%;
+  position: relative;
+  z-index: 1;
+}
+#scoreboard {
+  background-color: rgb(3, 71, 3);
+  width: 60%;
+  margin: 5% auto;
+  position: relative;
+  z-index: 2;
+}
+
+#scoreboard ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  padding: 10px 0px;
+  border: solid 5px white;
+  color: white;
+  font-size: 20px;
+}
+
+#field-box {
+  width: 50%;
+  background-color: green;
+  border: 5px solid white;
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  height: 70%;
+  padding-bottom: 20px;
+  text-align: center;
+  left: 10%;
+}
+
+.trivia-box {
+  width: 30%;
+  background-color: green;
+  border: 5px solid white;
+  padding-top: 20px;
+  position: absolute;
+  z-index: 0;
+  top: 20%;
+  height: 70%;
+  right: 10%;
+}
+
+.question {
+  background-color: #2c2b2b;
+  margin: 10px auto 0px auto;
+  width: 50%;
+  padding: 10px 20px;
+  text-align: center;
+  color: #eeeeee;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid #cccccc;
+}
+
+.multiple-choice {
+  list-style: none;
+  width: 65%;
+}
+
+.multiple-choice li {
+  padding: 20px 20px 0px 20px;
+  background-color: #2c2b2b;
+  margin: 5px -20px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  color: #eeeeee;
+  font-size: 20px;
+  cursor: pointer;
+  height: 45px;
+}
+
+.multiple-choice li:hover {
+  background-color: rgb(3, 71, 3);
+}
+
+.letters img {
+  height: 55px;
+  margin: 7px 0px;
+  border: 1px solid white;
+}
+
+.letters {
+  list-style: none;
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+}
+
+.trivia-box {
+  z-index: -1;
+}
+
+#question1 {
+  z-index: 1;
+}
+
+.result-box {
+  width: 30%;
+  background-color: green;
+  border: 5px solid white;
+  padding-top: 20px;
+  position: absolute;
+  z-index: 0;
+  top: 20%;
+  height: 70%;
+  font-size: 30px;
+  text-align: center;
+  right: 10%;
+}
+
+#next-overlay {
+  background-color: rgb(18, 139, 2, 0.95);
+  font-size: 30px;
+  text-align: center;
+}
+
+#start-game {
+  width: 80%;
+  background-color: rgb(18, 139, 2);
+  border: 5px solid white;
+  box-shadow: 0px 0px 30px 5px white;
+  padding-top: 20px;
+  position: absolute;
+  z-index: 1000;
+  top: 20%;
+  height: 70%;
+  font-size: 30px;
+  text-align: center;
+  right: 10%;
+  left: 10%;
+}
+
+#start {
+  width: 250px;
+  cursor: pointer;
+}
+
+/* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
+button {
+  color: white;
+  transition: all 0.5s;
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+  background-color: #2c2b2b;
+  font-family: 'Graduate', cursive;
+  font-size: 20px;
+  margin-top: 40px;
+}
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+button:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
+}
+button:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+/*  */
+
+@media only screen and (max-width: 1100px) {
+  #start-game {
+    width: 80%;
+    top: 20%;
+    height: 200%;
+    left: 10%;
+    right: 10%;
+  }
+
+  .trivia-box {
+    width: 80%;
+    top: 90%;
+    height: 70%;
+    left: 10%;
+    right: 10%;
+  }
+  #field-box {
+    width: 80%;
+    top: 20%;
+    height: 70%;
+    left: 10%;
+    right: 10%;
+    padding-bottom: 0px;
+  }
+
+  .result-box {
+    width: 80%;
+    top: 90%;
+    height: 70%;
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #start-game {
+    width: 80%;
+    top: 20%;
+    height: 200%;
+    left: 10%;
+    right: 10%;
+  }
+
+  .trivia-box {
+    width: 80%;
+    top: 70%;
+    height: 70%;
+    left: 10%;
+    right: 10%;
+  }
+  #field-box {
+    width: 80%;
+    top: 20%;
+    height: 70%;
+    left: 10%;
+    right: 10%;
+    padding-bottom: 0px;
+  }
+
+  .result-box {
+    width: 80%;
+    top: 70%;
+    height: 70%;
+    left: 10%;
+    right: 10%;
+  }
+}
