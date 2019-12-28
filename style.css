@@ -1,7 +1,6 @@
 body {
   margin: 0px;
-  background-image: url(images/background.jpg);
-  background-repeat: no-repeat;
+  background: url(images/background.jpg) no-repeat center center fixed;
   background-size: cover;
   background-color: black;
   font-family: 'Graduate', cursive;
@@ -276,5 +275,21 @@ button:hover::after {
     height: 70%;
     left: 10%;
     right: 10%;
+  }
+
+  .multiple-choice li {
+    font-size: 15px;
+    height: 30px;
+    width: 80%;
+  }
+
+  .letters img {
+    height: 40px;
+    margin: 7px 0px;
+    border: 1px solid white;
+  }
+
+  .question {
+    font-size: 18px;
   }
 }
