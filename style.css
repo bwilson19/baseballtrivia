@@ -301,8 +301,8 @@ button:hover::after {
 @media only screen and (max-width: 600px) {
   .overlay-cover {
     width: 80%;
-    top: 10%;
-    height: 60%;
+    top: 12%;
+    height: 82%;
     left: 10%;
     right: 10%;
     box-shadow: none;
@@ -310,15 +310,15 @@ button:hover::after {
 
   .trivia-box {
     width: 80%;
-    top: 40%;
-    height: 25%;
+    top: 52%;
+    height: 42%;
     left: 10%;
     right: 10%;
   }
   #field-box {
     width: 80%;
-    top: 10%;
-    height: 30%;
+    top: 12%;
+    height: 40%;
     left: 10%;
     right: 10%;
     padding-bottom: 0px;
@@ -326,8 +326,8 @@ button:hover::after {
 
   .result-box {
     width: 80%;
-    top: 40%;
-    height: 25%;
+    top: 52%;
+    height: 42%;
     left: 10%;
     right: 10%;
   }
@@ -398,12 +398,12 @@ button:hover::after {
     margin: 0px auto 5px auto;
     width: 80%;
     padding: 0px;
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .multiple-choice li {
-    padding: 5px 5px 0px 0px;
-    margin: 5px 0px;
+    padding: 10px 5px 0px 0px;
+    margin: 10px 0px;
     font-size: 10px;
     height: 20px;
     font-weight: bold;
