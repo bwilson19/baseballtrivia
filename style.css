@@ -203,7 +203,6 @@ header {
 
 #high-score {
   font-size: 15px;
-  padding: px;
 }
 
 #clear-score {
@@ -302,23 +301,24 @@ button:hover::after {
 @media only screen and (max-width: 600px) {
   .overlay-cover {
     width: 80%;
-    top: 20%;
-    height: 200%;
+    top: 10%;
+    height: 60%;
     left: 10%;
     right: 10%;
+    box-shadow: none;
   }
 
   .trivia-box {
     width: 80%;
-    top: 70%;
-    height: 70%;
+    top: 40%;
+    height: 25%;
     left: 10%;
     right: 10%;
   }
   #field-box {
     width: 80%;
-    top: 20%;
-    height: 70%;
+    top: 10%;
+    height: 30%;
     left: 10%;
     right: 10%;
     padding-bottom: 0px;
@@ -326,8 +326,8 @@ button:hover::after {
 
   .result-box {
     width: 80%;
-    top: 70%;
-    height: 70%;
+    top: 40%;
+    height: 25%;
     left: 10%;
     right: 10%;
   }
@@ -335,7 +335,6 @@ button:hover::after {
   .multiple-choice li {
     font-size: 13px;
     height: 30px;
-    width: 100%;
     text-align: center;
   }
 
@@ -349,5 +348,64 @@ button:hover::after {
 
   #scoreboard {
     width: 90%;
+  }
+
+  ul {
+    padding-inline-start: 0px;
+  }
+
+  .multiple-choice {
+    margin: auto;
+  }
+
+  header {
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 5px 0px;
+    font-size: 10px;
+  }
+
+  #scoreboard ul {
+    font-size: 10px;
+    padding: 5px 0px;
+    border: 2px solid white;
+  }
+
+  #run-count {
+    font-size: 15px;
+  }
+
+  #field {
+    width: 95%;
+  }
+
+  #high-score {
+    font-size: 8px;
+  }
+
+  #mute {
+    width: 20px;
+    top: 80%;
+  }
+
+  #high-score-box {
+    width: 40%;
+    margin: -4% auto 5% auto;
+    border: 2px solid white;
+  }
+
+  .question {
+    margin: 0px auto 5px auto;
+    width: 80%;
+    padding: 0px;
+    font-size: 10px;
+  }
+
+  .multiple-choice li {
+    padding: 5px 5px 0px 0px;
+    margin: 5px 0px;
+    font-size: 10px;
+    height: 20px;
+    font-weight: bold;
   }
 }
