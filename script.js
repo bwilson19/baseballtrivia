@@ -8,7 +8,8 @@ const hits = document.querySelector('#hit-count');
 const triviaBox = document.querySelectorAll('.trivia-box');
 const winResult = document.querySelector('#player-win');
 const lossResult = document.querySelector('#player-loss');
-const restart = document.querySelector('#restart');
+const restartLoss = document.querySelector('#restart-loss');
+const restartWin = document.querySelector('#restart-win');
 const field = document.querySelector('#field');
 const nextButton = document.querySelector('#next');
 const nextOverlay = document.querySelector('#next-overlay');
@@ -20,6 +21,7 @@ const hitSound = document.querySelector('#hit-sound');
 const booSound = document.querySelector('#boo-sound');
 const highScoreCounter = document.querySelector('#high-score');
 const clearHighScoreButton = document.querySelector('#clear-score');
+const winScreen = document.querySelector('#end-game');
 
 let currentRuns = 0;
 let currentOuts = 0;
@@ -52,19 +54,19 @@ let fieldOptions = [
 ];
 
 //add event listeners to every question
-for (let i = 0; i < winner.length; i++) {
-  winner[i].addEventListener('click', playerWins);
+for (let i = 0; i < winner.length - 1; i++) {
+  winner[i].addEventListener('click', playerHit);
 }
 
 for (let i = 0; i < losers.length; i++) {
-  losers[i].addEventListener('click', playerLoses);
+  losers[i].addEventListener('click', playerOut);
 }
 
 nextButton.addEventListener('click', resetOverlay);
 startGameButton.addEventListener('click', startGame);
 
 //if answer is correct
-function playerWins() {
+function playerHit() {
   if (currentRunners >= 3) {
     currentRuns + 1;
     runs.innerHTML = 'Runs: ' + (currentRuns += 1);
@@ -88,7 +90,7 @@ function playerWins() {
 }
 
 //if answer is incorrect
-function playerLoses(evt) {
+function playerOut(evt) {
   if (currentOuts < 2) {
     currentOuts += 1;
     outs.innerHTML = 'Outs: ' + currentOuts;
@@ -107,8 +109,8 @@ function playerLoses(evt) {
   }
 }
 
-// restart game after loss
-restart.addEventListener('click', restartGame);
+// restart game option after 3 outs
+restartLoss.addEventListener('click', restartGame);
 
 function restartGame() {
   triviaBox[0].style.zIndex = zIndex + 3;
@@ -123,6 +125,7 @@ function restartGame() {
   field.setAttribute('src', fieldOptions[0]);
   fieldNumber = 0;
   highScoreCounter.innerHTML = 'High Score: ' + highScore;
+  winScreen.style.display = 'none';
   startGameOverlay.style.display = 'block';
   for (let i = 0; i < losers.length; i++) {
     losers[i].style.color = 'white';
@@ -130,15 +133,17 @@ function restartGame() {
   }
 }
 
-// nextOverlay to bring up next question
+// bring up an overlay screen in between questions
 
 function resetOverlay() {
-  nextOverlay.style.zIndex = 0;
-  triviaBox[questionNumber].style.zIndex = zIndex + 3;
-  questionNumber += 1;
+  if (currentRuns < 10) {
+    nextOverlay.style.zIndex = 0;
+    triviaBox[questionNumber].style.zIndex = zIndex + 3;
+    questionNumber += 1;
+  }
 }
 
-// start game overlay to begin game
+// start game overlay
 function startGame() {
   startGameOverlay.style.display = 'none';
   music.play();
@@ -155,4 +160,22 @@ function muteMusic() {
     music.muted = false;
     mute.setAttribute('src', 'images/mute.png');
   }
+}
+
+// add win game screen for question 13 (10 runs), with a restart option
+
+let x = winner.length - 1;
+
+winner[x].addEventListener('click', tenRuns);
+restartWin.addEventListener('click', restartGame);
+
+function tenRuns() {
+  winScreen.style.display = 'block';
+  for (let i = 0; i < triviaBox.length; i++) {
+    triviaBox[i].style.zIndex = 0;
+  }
+  currentRuns + 1;
+  highScore = 10;
+  localStorage.setItem('highScore', highScore);
+  questionNumber = 1;
 }

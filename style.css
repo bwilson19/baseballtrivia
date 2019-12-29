@@ -79,7 +79,7 @@ header {
 
 .multiple-choice {
   list-style: none;
-  width: 65%;
+  width: 50%;
 }
 
 .multiple-choice li {
@@ -89,7 +89,7 @@ header {
   border-radius: 10px;
   border: 1px solid #cccccc;
   color: #eeeeee;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   height: 45px;
 }
@@ -98,13 +98,13 @@ header {
   background-color: rgb(3, 71, 3);
 }
 
-.letters img {
+.images img {
   height: 55px;
   margin: 7px 0px;
   border: 1px solid white;
 }
 
-.letters {
+.images {
   list-style: none;
 }
 
@@ -141,20 +141,28 @@ header {
   text-align: center;
 }
 
-#start-game {
+.overlay-cover {
   width: 80%;
   background-color: rgb(18, 139, 2);
   border: 5px solid white;
   box-shadow: 0px 0px 30px 5px white;
   padding-top: 20px;
   position: absolute;
-  z-index: 1000;
   top: 20%;
   height: 70%;
   font-size: 30px;
   text-align: center;
   right: 10%;
   left: 10%;
+}
+
+#start-game {
+  z-index: 1000;
+}
+
+#end-game {
+  display: none;
+  z-index: 100;
 }
 
 #start {
@@ -185,24 +193,25 @@ header {
 }
 
 #high-score-box {
-  background-color: none;
   width: 40%;
-  margin: -5% auto 5% auto;
+  margin: -5.5% auto 5% auto;
   border: 5px solid white;
   position: relative;
   z-index: 2;
+  display: inline-block;
 }
 
 #high-score {
   font-size: 15px;
-  padding: 2px;
+  padding: px;
 }
 
 #clear-score {
-  width: 12%;
-  height: 12%;
-  margin-left: -20px;
+  width: 13%;
   padding: 0px;
+  position: absolute;
+  bottom: 21%;
+  right: 7%;
 }
 /* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
 button {
@@ -254,7 +263,7 @@ button:hover::after {
 /*  */
 
 @media only screen and (max-width: 1100px) {
-  #start-game {
+  .overlay-cover {
     width: 80%;
     top: 20%;
     height: 200%;
@@ -291,7 +300,7 @@ button:hover::after {
 }
 
 @media only screen and (max-width: 600px) {
-  #start-game {
+  .overlay-cover {
     width: 80%;
     top: 20%;
     height: 200%;
@@ -327,12 +336,11 @@ button:hover::after {
     font-size: 13px;
     height: 30px;
     width: 100%;
+    text-align: center;
   }
 
-  .letters img {
-    height: 40px;
-    margin: 7px 0px;
-    border: 1px solid white;
+  .images img {
+    display: none;
   }
 
   .question {

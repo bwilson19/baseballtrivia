@@ -25,12 +25,16 @@
       Your browser does not support the audio element.
     </audio>
     <header>
-      <h1>Baseball Trivia</h1>
+      <h1>Baseball Trivia - 2019 Edition</h1>
     </header>
     <main>
-      <div id="start-game">
+      <div class="overlay-cover" id="start-game">
         <p>Click the ball to start the game!</p>
         <img id="start" src="images/baseballgif.gif" alt="Spinning Baseball" />
+      </div>
+      <div class="overlay-cover" id="end-game">
+        <p>You scored 10 runs! Want to play again?</p>
+        <button class="restart" id="restart-win">Restart</button>
       </div>
       <div id="field-box">
         <div id="diamond">
@@ -42,11 +46,13 @@
             </ul>
             <ul id="high-score-box">
               <li id="high-score">High Score: 0</li>
-              <img
-                id="clear-score"
-                src="images/clear.png"
-                alt="Clear High Score"
-              />
+              <li>
+                <img
+                  id="clear-score"
+                  src="images/clear.png"
+                  alt="Clear High Score"
+                />
+              </li>
             </ul>
           </div>
           <img id="field" src="images/baseball0.png" alt="Baseball Diamond" />
@@ -58,14 +64,14 @@
       </div>
       <div id="player-loss" class="result-box">
         <p>You Lose!</p>
-        <button id="restart">Restart</button>
+        <button class="restart" id="restart-loss">Restart</button>
       </div>
       <div id="question1" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Who was the NL MVP?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
+          <ul class="images">
             <li><img src="images/yelich.jpg" alt="Christian Yelich" /></li>
             <li><img src="images/bryant.jpg" alt="Kris Bryant" /></li>
             <li><img src="images/arenado.jpg" alt="Nolan Arenado" /></li>
@@ -81,14 +87,14 @@
       </div>
       <div id="question2" class="trivia-box">
         <div class="question">
-          <p>Who was the AL MVP in 2019?</p>
+          <p>Who was the AL MVP?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li><img src="images/yelich.jpg" alt="Christian Yelich" /></li>
-            <li><img src="images/bryant.jpg" alt="Kris Bryant" /></li>
-            <li><img src="images/arenado.jpg" alt="Nolan Arenado" /></li>
-            <li><img src="images/bellinger.jpg" alt="Cody Bellinger" /></li>
+          <ul class="images">
+            <li><img src="images/trout.jpg" alt="Mike Trout" /></li>
+            <li><img src="images/judge.jpg" alt="Aaron Judge" /></li>
+            <li><img src="images/lindor.jpg" alt="Francisco Lindor" /></li>
+            <li><img src="images/springer.jpg" alt="George Springer" /></li>
           </ul>
           <ul class="multiple-choice">
             <li class="winner">Mike Trout</li>
@@ -100,14 +106,16 @@
       </div>
       <div id="question3" class="trivia-box">
         <div class="question">
-          <p>Who won the 2019 World Series?</p>
+          <p>Who won the World Series?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/yankees.gif" alt="New York Yankees" /></li>
+            <li><img src="images/astros.gif" alt="Houston Astros" /></li>
+            <li>
+              <img src="images/nationals.gif" alt="Washington Nationals" />
+            </li>
+            <li><img src="images/giants.gif" alt="San Francisco Giants" /></li>
           </ul>
           <ul class="multiple-choice">
             <li class="loser">New York Yankees</li>
@@ -119,134 +127,193 @@
       </div>
       <div id="question4" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Who was the NL Cy Young?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/degrom.jpg" alt="Jacob deGrom" /></li>
+            <li><img src="images/bumgarner.jpg" alt="Madison Bumgarner" /></li>
+            <li><img src="images/kershaw.jpg" alt="Clayton Kershaw" /></li>
+            <li><img src="images/ryu.jpg" alt="Hyun-Jin Ryu" /></li>
           </ul>
           <ul class="multiple-choice">
-            <li class="loser">Christian Melich</li>
-            <li class="loser">Kris Bryant</li>
-            <li class="loser">Nolan Arenado</li>
-            <li class="winner">Cody Bellinger</li>
+            <li class="winner">Jacob deGrom</li>
+            <li class="loser">Madison Bumgarner</li>
+            <li class="loser">Clayton Kershaw</li>
+            <li class="loser">Hyun-Jin Ryu</li>
           </ul>
         </div>
       </div>
       <div id="question5" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Who was the AL Cy Young?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/snell.jpg" alt="Blake Snell" /></li>
+            <li><img src="images/bieber.jpg" alt="Shane Bieber" /></li>
+            <li><img src="images/verlander.jpg" alt="Justin Verlander" /></li>
+            <li><img src="images/cole.jpg" alt="Gerrit Cole" /></li>
           </ul>
           <ul class="multiple-choice">
-            <li class="loser">Christian Melich</li>
-            <li class="loser">Kris Bryant</li>
-            <li class="loser">Nolan Arenado</li>
-            <li class="winner">Cody Bellinger</li>
+            <li class="loser">Blake Snell</li>
+            <li class="loser">Shane Bieber</li>
+            <li class="winner">Justin Verlander</li>
+            <li class="loser">Gerrit Cole</li>
           </ul>
         </div>
       </div>
       <div id="question6" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Which player led the league in home runs?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/alonso.jpg" alt="Pete Alonso" /></li>
+            <li><img src="images/soler.jpg" alt="Jorge Soler" /></li>
+            <li><img src="images/yelich.jpg" alt="Christian Yelich" /></li>
+            <li><img src="images/bellinger.jpg" alt="Cody Bellinger" /></li>
           </ul>
           <ul class="multiple-choice">
-            <li class="loser">Christian Melich</li>
-            <li class="loser">Kris Bryant</li>
-            <li class="loser">Nolan Arenado</li>
-            <li class="winner">Cody Bellinger</li>
+            <li class="winner">Pete Alonso</li>
+            <li class="loser">Jorge Soler</li>
+            <li class="loser">Christian Yelich</li>
+            <li class="loser">Cody Bellinger</li>
           </ul>
         </div>
       </div>
       <div id="question7" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Which pitcher led the league in strikeouts?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/verlander.jpg" alt="Justin Verlander" /></li>
+            <li><img src="images/cole.jpg" alt="Gerrit Cole" /></li>
+            <li><img src="images/ray.jpg" alt="Robbie Ray" /></li>
+            <li><img src="images/scherzer.jpg" alt="Max Scherzer" /></li>
           </ul>
           <ul class="multiple-choice">
-            <li class="loser">Christian Melich</li>
-            <li class="loser">Kris Bryant</li>
-            <li class="loser">Nolan Arenado</li>
-            <li class="winner">Cody Bellinger</li>
+            <li class="loser">Justin Verlander</li>
+            <li class="winner">Gerrit Cole</li>
+            <li class="loser">Robbie Ray</li>
+            <li class="loser">Max Scherzer</li>
           </ul>
         </div>
       </div>
       <div id="question8" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Which closer the league in saves?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/smith.jpg" alt="Will Smith" /></li>
+            <li><img src="images/hader.jpg" alt="Josh Hader" /></li>
+            <li><img src="images/chapman.jpg" alt="Aroldis Chapman" /></li>
+            <li><img src="images/yates.jpg" alt="Kirby Yates" /></li>
           </ul>
           <ul class="multiple-choice">
-            <li class="loser">Christian Melich</li>
-            <li class="loser">Kris Bryant</li>
-            <li class="loser">Nolan Arenado</li>
-            <li class="winner">Cody Bellinger</li>
+            <li class="loser">Will Smith</li>
+            <li class="loser">Josh Hader</li>
+            <li class="loser">Aroldis Chapman</li>
+            <li class="winner">Kirby Yates</li>
           </ul>
         </div>
       </div>
       <div id="question9" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Who was the NL Rookie of the Year?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/soroka.jpg" alt="Mike Soroka" /></li>
+            <li><img src="images/tatis.jpg" alt="Fernando Tatis Jr." /></li>
+            <li><img src="images/alonso.jpg" alt="Pete Alonso" /></li>
+            <li><img src="images/robles.jpg" alt="Victor Robles" /></li>
           </ul>
           <ul class="multiple-choice">
-            <li class="loser">Christian Melich</li>
-            <li class="loser">Kris Bryant</li>
-            <li class="loser">Nolan Arenado</li>
-            <li class="winner">Cody Bellinger</li>
+            <li class="loser">Mike Soroka</li>
+            <li class="loser">Fernando Tatis Jr.</li>
+            <li class="winner">Pete Alonso</li>
+            <li class="loser">Victor Robles</li>
           </ul>
         </div>
       </div>
       <div id="question10" class="trivia-box">
         <div class="question">
-          <p>Who was the NL MVP in 2019?</p>
+          <p>Who was the AL Rookie of the Year?</p>
         </div>
         <div class="answers">
-          <ul class="letters">
-            <li>A.</li>
-            <li>B.</li>
-            <li>C.</li>
-            <li>D.</li>
+          <ul class="images">
+            <li><img src="images/mercado.jpg" alt="Oscar Mercado" /></li>
+            <li><img src="images/alvarez.jpg" alt="Yordan Alvarez" /></li>
+            <li><img src="images/vladdy.jpg" alt="Vlad Guerrero Jr." /></li>
+            <li><img src="images/means.jpg" alt="John Means" /></li>
           </ul>
           <ul class="multiple-choice">
-            <li class="loser">Christian Pelich</li>
-            <li class="loser">Kris Bryant</li>
-            <li class="loser">Nolan Arenado</li>
-            <li class="winner">Cody Bellinger</li>
+            <li class="loser">Oscar Mercado</li>
+            <li class="winner">Yordan Alvarez</li>
+            <li class="loser">Vlad Guerrero Jr.</li>
+            <li class="loser">John Means</li>
+          </ul>
+        </div>
+      </div>
+      <div id="question11" class="trivia-box">
+        <div class="question">
+          <p>Who was the NL Manager of the Year?</p>
+        </div>
+        <div class="answers">
+          <ul class="images">
+            <li><img src="images/counsell.jpg" alt="Craig Counsell" /></li>
+            <li><img src="images/shildt.jpg" alt="Mike Shildt" /></li>
+            <li><img src="images/bochy.jpg" alt="Bruce Bochy" /></li>
+            <li><img src="images/martinez.jpg" alt="Dave Martinez" /></li>
+          </ul>
+          <ul class="multiple-choice">
+            <li class="loser">Craig Counsell</li>
+            <li class="winner">Mike Shildt</li>
+            <li class="loser">Bruce Bochy</li>
+            <li class="loser">Dave Martinez</li>
+          </ul>
+        </div>
+      </div>
+      <div id="question12" class="trivia-box">
+        <div class="question">
+          <p>Who was the AL Manager of the Year?</p>
+        </div>
+        <div class="answers">
+          <ul class="images">
+            <li><img src="images/hinch.jpg" alt="A.J. Hinch" /></li>
+            <li><img src="images/boone.jpg" alt="Aaron Boone" /></li>
+            <li><img src="images/melvin.jpg" alt="Bob Melvin" /></li>
+            <li><img src="images/baldelli.jpg" alt="Rocco Baldelli" /></li>
+          </ul>
+          <ul class="multiple-choice">
+            <li class="loser">A.J. Hinch</li>
+            <li class="loser">Aaron Boone</li>
+            <li class="loser">Bob Melvin</li>
+            <li class="winner">Rocco Baldelli</li>
+          </ul>
+        </div>
+      </div>
+      <div id="question13" class="trivia-box">
+        <div class="question">
+          <p>
+            FINAL QUESTION: Who led the league in OPS?
+          </p>
+        </div>
+        <div class="answers">
+          <ul class="images">
+            <li><img src="images/trout.jpg" alt="Mike Trout" /></li>
+            <li><img src="images/yelich.jpg" alt="Christian Yelich" /></li>
+            <li><img src="images/bellinger.jpg" alt="Cody Bellinger" /></li>
+            <li><img src="images/bregman.jpg" alt="Alex Bregman" /></li>
+          </ul>
+          <ul class="multiple-choice">
+            <li class="loser">Mike Trout</li>
+            <li class="winner">Christian Yelich</li>
+            <li class="loser">Cody Bellinger</li>
+            <li class="loser">Alex Bregman</li>
           </ul>
         </div>
       </div>
