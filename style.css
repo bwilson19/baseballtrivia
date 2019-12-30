@@ -7,36 +7,47 @@ body {
   overflow: auto;
 }
 
+ul {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
 header {
-  width: 100%;
+  margin: 0px;
   text-align: center;
   color: white;
-  margin-bottom: 50px;
   background-color: rgb(18, 139, 2, 0.3);
-  padding: 20px 0px;
+  padding: 15px 0px;
+  font-size: 13px;
 }
+
 #field {
   width: 95%;
   position: relative;
   z-index: 1;
 }
 #scoreboard {
-  width: 60%;
-  margin: 2% auto 0% auto;
+  width: 100%;
+  margin: 2% 0%;
   position: relative;
   z-index: 2;
+  font-size: 20px;
 }
 
-#scoreboard ul {
+.scoreboard-boxes {
   background-color: rgb(3, 71, 3);
   display: flex;
   flex-direction: row;
   list-style: none;
   justify-content: space-around;
-  border: solid 5px white;
+  align-items: center;
   color: white;
-  font-size: 20px;
   padding: 10px 0px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
 #field-box {
@@ -46,9 +57,9 @@ header {
   position: absolute;
   z-index: 1;
   top: 20%;
-  height: 70%;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   text-align: center;
+  height: 70%;
   left: 10%;
 }
 
@@ -56,52 +67,62 @@ header {
   width: 30%;
   background-color: green;
   border: 5px solid white;
-  padding-top: 20px;
   position: absolute;
   z-index: 0;
   top: 20%;
   height: 70%;
   right: 10%;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .question {
   background-color: #b45c0a;
-  margin: 10px auto 0px auto;
-  width: 50%;
-  padding: 10px 20px;
+  margin: 5% 0%;
+  width: 100%;
   text-align: center;
   color: #eeeeee;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  border-radius: 10px;
-  border: 2px solid #cccccc;
+  padding: 10px 0px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+.question p {
+  margin: 5% 20%;
 }
 
 .multiple-choice {
   list-style: none;
-  width: 50%;
+  width: 100%;
 }
 
 .multiple-choice li {
-  padding: 20px 20px 0px 20px;
   background-color: #b45c0a;
-  margin: 5px -20px;
-  border-radius: 10px;
-  border: 1px solid #cccccc;
   color: #eeeeee;
+  margin: 5% 0%;
+  text-align: center;
   font-size: 16px;
   cursor: pointer;
   height: 45px;
+  width: 90%;
+  box-shadow: 0px 0px 5px 1px black;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: left;
+  align-items: center;
 }
 
 .multiple-choice li:hover {
-  background-color: rgb(3, 71, 3);
+  background-color: rgb(97, 41, 17);
 }
 
-.images img {
+.multiple-choice img {
   height: 55px;
-  margin: 7px 0px;
-  border: 1px solid white;
+  margin-right: 10%;
+  margin-left: 5%;
 }
 
 .images {
@@ -126,11 +147,12 @@ header {
   background-color: green;
   border: 5px solid white;
   padding-top: 20px;
+  padding-bottom: 30px;
   position: absolute;
   z-index: 0;
   top: 20%;
   height: 70%;
-  font-size: 30px;
+  font-size: 2rem;
   text-align: center;
   right: 10%;
 }
@@ -145,15 +167,16 @@ header {
   width: 80%;
   background-color: rgb(18, 139, 2);
   border: 5px solid white;
-  box-shadow: 0px 0px 30px 5px white;
+  box-shadow: 0px 0px 20px 3px black;
   padding-top: 20px;
   position: absolute;
   top: 20%;
-  height: 70%;
+  height: 75%;
   font-size: 30px;
   text-align: center;
   right: 10%;
   left: 10%;
+  margin-bottom: 50px;
 }
 
 #start-game {
@@ -166,7 +189,7 @@ header {
 }
 
 #start {
-  width: 250px;
+  width: 100px;
   cursor: pointer;
 }
 
@@ -181,6 +204,7 @@ header {
 #run-count {
   font-size: 30px;
   font-weight: bold;
+  margin: 0px -100px;
   color: gold;
 }
 
@@ -193,25 +217,25 @@ header {
 }
 
 #high-score-box {
-  width: 40%;
-  margin: -5.5% auto 5% auto;
-  border: 5px solid white;
-  position: relative;
-  z-index: 2;
-  display: inline-block;
+  width: 30%;
+  margin: 0 auto 5% auto;
+  border-top: 0px;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 
 #high-score {
   font-size: 15px;
 }
 
-#clear-score {
-  width: 13%;
-  padding: 0px;
-  position: absolute;
-  bottom: 21%;
-  right: 7%;
+#clear-score img {
+  width: 20px;
 }
+
+#clear-score {
+  border-bottom: 0px;
+}
+
 /* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
 button {
   color: white;
@@ -222,7 +246,7 @@ button {
   text-align: center;
   width: 250px;
   cursor: pointer;
-  background-color: #2c2b2b;
+  background-color: #b45c0a;
   font-family: 'Graduate', cursive;
   font-size: 20px;
   margin-top: 40px;
@@ -293,12 +317,10 @@ button:hover::after {
     left: 10%;
     right: 10%;
   }
-  #scoreboard {
-    width: 70%;
-  }
 }
 
-@media only screen and (max-width: 600px) {
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
   .overlay-cover {
     width: 80%;
     top: 12%;
@@ -347,11 +369,7 @@ button:hover::after {
   }
 
   #scoreboard {
-    width: 90%;
-  }
-
-  ul {
-    padding-inline-start: 0px;
+    width: 100%;
   }
 
   .multiple-choice {
@@ -362,13 +380,12 @@ button:hover::after {
     width: 100%;
     margin-bottom: 0px;
     padding: 5px 0px;
-    font-size: 10px;
+    font-size: 9px;
   }
 
   #scoreboard ul {
     font-size: 10px;
     padding: 5px 0px;
-    border: 2px solid white;
   }
 
   #run-count {
@@ -390,14 +407,10 @@ button:hover::after {
 
   #high-score-box {
     width: 40%;
-    margin: -4% auto 5% auto;
-    border: 2px solid white;
   }
 
   .question {
     margin: 0px auto 5px auto;
-    width: 80%;
-    padding: 0px;
     font-size: 15px;
   }
 
@@ -408,4 +421,12 @@ button:hover::after {
     height: 20px;
     font-weight: bold;
   }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
 }
