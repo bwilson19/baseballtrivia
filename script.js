@@ -126,7 +126,7 @@ function restartGame() {
   fieldNumber = 0;
   highScoreCounter.innerHTML = 'High Score: ' + highScore;
   winScreen.style.display = 'none';
-  startGameOverlay.style.display = 'block';
+  startGameOverlay.style.display = 'flex';
   for (let i = 0; i < losers.length; i++) {
     losers[i].style.color = 'white';
     losers[i].style.textDecoration = 'none';
