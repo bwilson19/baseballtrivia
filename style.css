@@ -10,9 +10,10 @@ body {
 main {
   position: absolute;
   width: 100%;
-  max-width: 1500px;
   height: 100%;
-  max-height: 800px;
+  max-height: 1200px;
+  /* display: flex;
+  justify-content: space-around; */
 }
 
 ul {
@@ -314,6 +315,7 @@ button:hover::after {
     width: 80%;
     top: 95%;
     height: 80%;
+    max-height: 530px;
     left: 10%;
     right: 10%;
   }
@@ -330,6 +332,7 @@ button:hover::after {
     width: 80%;
     top: 95%;
     height: 80%;
+    max-height: 530px;
     left: 10%;
     right: 10%;
   }
@@ -344,11 +347,11 @@ button:hover::after {
 }
 
 /* Portrait */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
   .overlay-cover {
     width: 80%;
     top: 2%;
-    height: 90%;
+    height: 100%;
     left: 10%;
     right: 10%;
     box-shadow: none;
@@ -363,7 +366,7 @@ button:hover::after {
   .trivia-box {
     width: 80%;
     top: 41%;
-    height: 45%;
+    height: 50%;
     left: 10%;
     right: 10%;
   }
@@ -379,7 +382,7 @@ button:hover::after {
   .result-box {
     width: 80%;
     top: 41%;
-    height: 45%;
+    height: 50%;
     left: 10%;
     right: 10%;
     margin-bottom: 0px;
@@ -396,6 +399,7 @@ button:hover::after {
   }
 
   #scoreboard {
+    font-size: 5px;
     width: 100%;
   }
 
@@ -451,7 +455,7 @@ button:hover::after {
 }
 
 /* Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
   #field-box {
     width: 50%;
     top: 3%;
@@ -460,7 +464,7 @@ button:hover::after {
   }
 
   .trivia-box {
-    width: 35%;
+    width: 40%;
     top: 3%;
     height: 110%;
     left: 57.5%;

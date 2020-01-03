@@ -147,6 +147,7 @@ function resetOverlay() {
 function startGame() {
   startGameOverlay.style.display = 'none';
   music.play();
+  music.volume = 0.1;
 }
 
 // mute/play background music
