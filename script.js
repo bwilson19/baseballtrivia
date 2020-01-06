@@ -89,11 +89,30 @@ function resetClock() {
 
 function timeOut() {
   currentTimeInt--;
-  pitchClock.innerHTML = ':' + currentTimeInt;
-  if (currentTimeInt == 0) {
-    console.log('Done');
+  if (currentTimeInt >= 10) {
+    pitchClock.innerHTML = ':' + currentTimeInt;
+  } else {
+    pitchClock.innerHTML = ':0' + currentTimeInt;
+  }
+  if (currentTimeInt == 0 && currentOuts < 2) {
     stopClock();
     pitchClock.innerHTML = 'Out';
+    currentOuts += 1;
+    booSound.play();
+    booSound.volume = 0.2;
+    outs.innerHTML = 'Outs: ' + currentOuts;
+  } else if (currentTimeInt == 0 && currentOuts >= 2) {
+    lossResult.style.zIndex = '100';
+    outs.innerHTML = 'Outs: ' + 3;
+    currentOuts = 0;
+    booSound.play();
+    booSound.volume = 0.2;
+    pitchClock.innerHTML = 'Out!';
+    stopClock();
+    for (let i = 0; i < triviaBox.length; i++) {
+      triviaBox[i].style.zIndex = 0;
+    }
+    questionNumber = 1;
   }
 }
 

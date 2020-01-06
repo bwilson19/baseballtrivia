@@ -272,6 +272,15 @@ header {
   border: green solid 5px;
 }
 
+#copyright a {
+  position: absolute;
+  bottom: -10%;
+  right: 2%;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+
 /* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
 button {
   color: white;
@@ -368,6 +377,9 @@ button:hover::after {
   #directions {
     border-top: 2px solid white;
     border-left: 0px;
+  }
+  #copyright {
+    display: none;
   }
 }
 
@@ -487,6 +499,10 @@ button:hover::after {
   #pitch-clock {
     font-size: 20px;
   }
+
+  #copyright {
+    display: none;
+  }
 }
 
 /* Landscape */
@@ -541,5 +557,8 @@ button:hover::after {
   }
   #pitch-clock {
     font-size: 20px;
+  }
+  #copyright {
+    display: none;
   }
 }
