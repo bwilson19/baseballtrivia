@@ -1,12 +1,10 @@
 // Global Variables
 const losers = document.querySelectorAll('.loser');
-const question = document.querySelector('.question');
 const winner = document.querySelectorAll('.winner');
 const runs = document.querySelector('#run-count');
 const outs = document.querySelector('#out-count');
 const hits = document.querySelector('#hit-count');
 const triviaBox = document.querySelectorAll('.trivia-box');
-const winResult = document.querySelector('#player-win');
 const lossResult = document.querySelector('#player-loss');
 const restartLoss = document.querySelector('#restart-loss');
 const restartWin = document.querySelector('#restart-win');
@@ -22,10 +20,10 @@ const booSound = document.querySelector('#boo-sound');
 const highScoreCounter = document.querySelector('#high-score');
 const clearHighScoreButton = document.querySelector('#clear-score');
 const winScreen = document.querySelector('#end-game');
+const pitchClock = document.querySelector('#pitch-clock');
 
 let currentRuns = 0;
 let currentOuts = 0;
-let currentInning = 0;
 let currentRunners = 0;
 let currentHits = 0;
 let zIndex = 0;
@@ -64,6 +62,40 @@ for (let i = 0; i < losers.length; i++) {
 
 nextButton.addEventListener('click', resetOverlay);
 startGameButton.addEventListener('click', startGame);
+startGameButton.addEventListener('click', startClock);
+
+// pitch clock timer (20 second time limit on questions) (helped by https://stackoverflow.com/questions/44314897/javascript-timer-for-a-quiz)
+
+var startTimeInt = 20;
+var currentTimeInt = startTimeInt;
+var interval = undefined;
+
+function startClock() {
+  if (!interval) {
+    pitchClock.innerHTML = ':' + currentTimeInt;
+    interval = setInterval(timeOut, 1000);
+  }
+}
+
+function stopClock() {
+  clearInterval(interval);
+  interval = undefined;
+}
+
+function resetClock() {
+  currentTimeInt = startTimeInt;
+  pitchClock.innerHTML = ':' + currentTimeInt;
+}
+
+function timeOut() {
+  currentTimeInt--;
+  pitchClock.innerHTML = ':' + currentTimeInt;
+  if (currentTimeInt == 0) {
+    console.log('Done');
+    stopClock();
+    pitchClock.innerHTML = 'Out';
+  }
+}
 
 //if answer is correct
 function playerHit() {
@@ -78,6 +110,9 @@ function playerHit() {
     hits.innerHTML = 'Hits: ' + (currentHits += 1);
     nextOverlay.style.zIndex = 100;
     hitSound.play();
+    hitSound.volume = 0.2;
+    pitchClock.innerHTML = 'Run!'
+    stopClock();
   } else {
     hits.innerHTML = 'Hits: ' + (currentHits += 1);
     currentHits + 1;
@@ -86,6 +121,10 @@ function playerHit() {
     field.setAttribute('src', fieldOptions[fieldNumber]);
     nextOverlay.style.zIndex = 100;
     hitSound.play();
+    hitSound.volume = 0.2;
+    count = 0;
+    pitchClock.innerHTML = 'Hit!';
+    stopClock();
   }
 }
 
@@ -97,11 +136,17 @@ function playerOut(evt) {
     evt.target.style.color = 'red';
     evt.target.style.textDecoration = 'line-through';
     booSound.play();
+    booSound.volume = 0.2;
+    pitchClock.innerHTML = 'Out!';
+    stopClock();
   } else {
     lossResult.style.zIndex = '100';
     outs.innerHTML = 'Outs: ' + 3;
     currentOuts = 0;
     booSound.play();
+    booSound.volume = 0.2;
+    pitchClock.innerHTML = 'Out!';
+    stopClock();
     for (let i = 0; i < triviaBox.length; i++) {
       triviaBox[i].style.zIndex = 0;
     }
@@ -140,6 +185,8 @@ function resetOverlay() {
     nextOverlay.style.zIndex = 0;
     triviaBox[questionNumber].style.zIndex = zIndex + 3;
     questionNumber += 1;
+    resetClock();
+    startClock();
   }
 }
 
@@ -156,10 +203,10 @@ muteButton.addEventListener('click', muteMusic);
 function muteMusic() {
   if (music.muted == false) {
     music.muted = true;
-    mute.setAttribute('src', 'images/play.png');
+    muteButton.setAttribute('src', 'images/play.png');
   } else {
     music.muted = false;
-    mute.setAttribute('src', 'images/mute.png');
+    muteButton.setAttribute('src', 'images/mute.png');
   }
 }
 

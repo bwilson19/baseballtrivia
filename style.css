@@ -245,12 +245,31 @@ header {
 }
 
 #directions {
-  padding: 0% 15%;
+  padding: 0% 5%;
   font-size: 20px;
+  text-align: left;
+  border-left: 2px solid white;
+}
+
+#directions li {
+  margin: 30px 0px;
 }
 
 #start-box {
-  margin-left: 10%;
+  padding: 0% 10%;
+}
+
+#pitch-clock {
+  color: red;
+  font-weight: bolder;
+  font-size: 40px;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  z-index: 2;
+  background-color: black;
+  padding: 10px;
+  border: green solid 5px;
 }
 
 /* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
@@ -300,6 +319,7 @@ button:hover::after {
   opacity: 1;
   transform: scale(1, 1);
 }
+
 /*  */
 
 @media only screen and (max-width: 1100px) {
@@ -344,6 +364,11 @@ button:hover::after {
   #start-box {
     margin-left: 0px;
   }
+
+  #directions {
+    border-top: 2px solid white;
+    border-left: 0px;
+  }
 }
 
 /* Portrait */
@@ -366,7 +391,7 @@ button:hover::after {
   .trivia-box {
     width: 80%;
     top: 41%;
-    height: 50%;
+    height: 55%;
     left: 10%;
     right: 10%;
   }
@@ -382,7 +407,7 @@ button:hover::after {
   .result-box {
     width: 80%;
     top: 41%;
-    height: 50%;
+    height: 55%;
     left: 10%;
     right: 10%;
     margin-bottom: 0px;
@@ -452,6 +477,10 @@ button:hover::after {
     height: 20px;
     font-weight: bold;
   }
+  #directions {
+    border-top: 2px solid white;
+    border-left: 0px;
+  }
 }
 
 /* Landscape */
@@ -498,5 +527,10 @@ button:hover::after {
   }
   #scoreboard {
     font-size: 15px;
+  }
+
+  #directions {
+    border-top: 2px solid white;
+    border-left: 0px;
   }
 }
