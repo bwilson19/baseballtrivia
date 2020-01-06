@@ -111,7 +111,7 @@ function playerHit() {
     nextOverlay.style.zIndex = 100;
     hitSound.play();
     hitSound.volume = 0.2;
-    pitchClock.innerHTML = 'Run!'
+    pitchClock.innerHTML = 'Run!';
     stopClock();
   } else {
     hits.innerHTML = 'Hits: ' + (currentHits += 1);
@@ -195,17 +195,26 @@ function startGame() {
   startGameOverlay.style.display = 'none';
   music.play();
   music.volume = 0.1;
+  resetClock();
 }
 
 // mute/play background music
 muteButton.addEventListener('click', muteMusic);
 
 function muteMusic() {
-  if (music.muted == false) {
+  if (
+    music.muted == false &&
+    hitSound.muted == false &&
+    booSound.muted == false
+  ) {
     music.muted = true;
+    hitSound.muted = true;
+    booSound.muted = true;
     muteButton.setAttribute('src', 'images/play.png');
   } else {
     music.muted = false;
+    hitSound.muted = false;
+    booSound.muted = false;
     muteButton.setAttribute('src', 'images/mute.png');
   }
 }
