@@ -480,6 +480,12 @@ button:hover::after {
   #directions {
     border-top: 2px solid white;
     border-left: 0px;
+    padding-left: 10%;
+    font-size: 15px;
+  }
+
+  #pitch-clock {
+    font-size: 20px;
   }
 }
 
@@ -500,7 +506,7 @@ button:hover::after {
   }
 
   .result-box {
-    width: 35%;
+    width: 40%;
     top: 3%;
     height: 110%;
     left: 57.5%;
@@ -532,5 +538,8 @@ button:hover::after {
   #directions {
     border-top: 2px solid white;
     border-left: 0px;
+  }
+  #pitch-clock {
+    font-size: 20px;
   }
 }
