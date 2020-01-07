@@ -302,23 +302,29 @@ nav {
 
 #directions-menu {
   width: 40%;
-  height: 40%;
+  height: 43%;
   margin: 5% auto;
   position: absolute;
   z-index: 1000;
   font-size: 18px;
   padding: 75px;
   text-align: left;
-  display: none;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(1, 65, 1, .95);
+  background-color: rgb(1, 65, 1, 0.95);
   overflow: auto;
 }
 
 #directions-menu li {
   margin: 30px 0px;
+}
+
+#close-window {
+  width: 3%;
+  position: absolute;
+  top: 3%;
+  left: 2%;
 }
 
 /* cool button styling from https://codepen.io/rauldronca/details/mEXomp */
@@ -424,7 +430,7 @@ button:hover::after {
 }
 
 /* Portrait */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: portrait) {
   .overlay-cover {
     width: 80%;
     top: 2%;
@@ -519,7 +525,7 @@ button:hover::after {
 
   .question {
     margin: 0px auto 5px auto;
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .multiple-choice li {
@@ -537,16 +543,29 @@ button:hover::after {
   }
 
   #pitch-clock {
-    font-size: 20px;
+    font-size: 15px;
+    bottom: 20%;
   }
 
   #copyright {
     display: none;
   }
+
+  .nav-buttons {
+    margin: 0px 15px 0px 15px;
+    font-size: 10px;
+    line-height: 10px;
+    height: 20px;
+    width: 100px;
+  }
+
+  #directions-menu {
+    font-size: 14px;
+  }
 }
 
 /* Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
   #field-box {
     width: 50%;
     top: 3%;

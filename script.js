@@ -25,6 +25,7 @@ const nav = document.querySelector('nav');
 const restartButton = document.querySelector('#restart-button');
 const directionsButton = document.querySelector('#directions-button');
 const directionsMenu = document.querySelector('#directions-menu');
+const closeWindowButton = document.querySelector('#close-window');
 
 let currentRuns = 0;
 let currentOuts = 0;
@@ -99,24 +100,13 @@ function timeOut() {
     pitchClock.innerHTML = ':0' + currentTimeInt;
   }
   if (currentTimeInt == 0 && currentOuts < 2) {
-    stopClock();
     pitchClock.innerHTML = 'Out';
-    currentOuts += 1;
-    booSound.play();
-    booSound.volume = 0.2;
-    outs.innerHTML = 'Outs: ' + currentOuts;
-  } else if (currentTimeInt == 0 && currentOuts >= 2) {
-    lossResult.style.zIndex = '100';
-    outs.innerHTML = 'Outs: ' + 3;
-    currentOuts = 0;
-    booSound.play();
-    booSound.volume = 0.2;
-    pitchClock.innerHTML = 'Out!';
     stopClock();
-    for (let i = 0; i < triviaBox.length; i++) {
-      triviaBox[i].style.zIndex = 0;
-    }
-    questionNumber = 1;
+    playerOut();
+  } else if (currentTimeInt == 0 && currentOuts >= 2) {
+    pitchClock.innerHTML = 'Out!';
+    playerOut();
+    stopClock();
   }
 }
 
@@ -145,7 +135,6 @@ function playerHit() {
     nextOverlay.style.zIndex = 100;
     hitSound.play();
     hitSound.volume = 0.2;
-    count = 0;
     pitchClock.innerHTML = 'Hit!';
     stopClock();
   }
@@ -156,10 +145,10 @@ function playerOut(evt) {
   if (currentOuts < 2) {
     currentOuts += 1;
     outs.innerHTML = 'Outs: ' + currentOuts;
-    evt.target.style.color = 'red';
-    evt.target.style.textDecoration = 'line-through';
     booSound.play();
     booSound.volume = 0.2;
+    evt.target.style.color = 'red';
+    evt.target.style.textDecoration = 'line-through';
     pitchClock.innerHTML = 'Out!';
     stopClock();
   } else {
@@ -183,6 +172,9 @@ restartLoss.addEventListener('click', restartGame);
 restartButton.addEventListener('click', restartGame);
 
 function restartGame() {
+  for (let i = 0; i < triviaBox.length; i++) {
+    triviaBox[i].style.zIndex = 0;
+  }
   triviaBox[0].style.zIndex = zIndex + 3;
   lossResult.style.zIndex = '0';
   currentOuts = 0;
@@ -194,10 +186,12 @@ function restartGame() {
   outs.innerHTML = 'Outs: ' + currentOuts;
   field.setAttribute('src', fieldOptions[0]);
   fieldNumber = 0;
+  directionsMenu.style.display = 'none';
   highScoreCounter.innerHTML = 'High Score: ' + highScore;
   winScreen.style.display = 'none';
   nav.style.display = 'none';
   startGameOverlay.style.display = 'flex';
+  questionNumber = 1;
   for (let i = 0; i < losers.length; i++) {
     losers[i].style.color = 'white';
     losers[i].style.textDecoration = 'none';
@@ -225,7 +219,7 @@ function startGame() {
   nav.style.display = 'block';
 }
 
-// directions menu overlay
+// directions menu overlay toggle
 
 directionsButton.addEventListener('click', directionsMenuToggle);
 
@@ -274,4 +268,12 @@ function tenRuns() {
   highScore = 10;
   localStorage.setItem('highScore', highScore);
   questionNumber = 1;
+}
+
+// close directions menu button
+
+closeWindowButton.addEventListener('click', closeWindow);
+
+function closeWindow() {
+  directionsMenu.style.display = 'none';
 }

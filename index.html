@@ -27,7 +27,7 @@
     </audio>
     <!-- Header -->
     <header>
-      <h1>Baseball Trivia - 2019 Edition</h1>
+      <h1>Baseball Trivia (2019 Season)</h1>
     </header>
     <!-- Nav (hidden until start) -->
     <nav>
@@ -57,28 +57,30 @@
             <li>Each incorrect answer is an out.</li>
             <li>
               Keep an eye on
-              <span style="color: red; font-weight: 1000">the pitch clock</span
+              <span style="color: red; font-weight: bolder"
+                >the pitch clock</span
               >, you only have 20 seconds to answer each question!
             </li>
           </ul>
         </div>
       </div>
-       <div class="overlay-cover" id="directions-menu">
-          <h2>Directions</h2>
-          <ul>
-            <li>Score 10 runs before making 3 outs.</li>
-            <li>
-              Each correct answer is a base hit (remember: you'll need to fill
-              the bases before you start scoring runs).
-            </li>
-            <li>Each incorrect answer is an out.</li>
-            <li>
-              Keep an eye on
-              <span style="color: red; font-weight: 1000">the pitch clock</span
-              >, you only have 20 seconds to answer each question!
-            </li>
-          </ul>
-        </div>
+      <div class="overlay-cover" id="directions-menu" style="display: none">
+        <h2>Directions</h2>
+        <ul>
+          <li>Score 10 runs before making 3 outs.</li>
+          <li>
+            Each correct answer is a base hit (remember: you'll need to fill the
+            bases before you start scoring runs).
+          </li>
+          <li>Each incorrect answer is an out.</li>
+          <li>
+            Keep an eye on
+            <span style="color: red; font-weight: bolder">the pitch clock</span
+            >, you only have 20 seconds to answer each question!
+          </li>
+        </ul>
+        <img id="close-window" src="images/close.png" alt="Close Window" />
+      </div>
 
       <!-- End game screen after victory -->
       <div class="overlay-cover" id="end-game">
