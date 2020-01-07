@@ -2,11 +2,11 @@
 
 ## Getting Started
 
-This game should be run on Google Chrome on a desktop for best results, but will work fine on any browser. The game is fully mobile-responsive as well.
+This game should be run on Google Chrome on a desktop for best results, but will work fine on any browser. The game is also fully mobile-responsive.
 
 ## Game Instructions
 
-This game is a basic question/answer trivia game centered around baseball facts from 2019. The goal is to score 10 runs before the user makes 3 incorrect guesses (a.k.a "outs")
+This game is a basic multiple choice trivia game centered around baseball facts from 2019. The goal is to score 10 runs before the user makes 3 incorrect guesses (a.k.a "outs")
 
 Each correct guess will count as a "hit", and will add a runner to the field of play or on the bases. Once there are 3 runners on the bases, each subsequent hit will count as a "run".
 
@@ -45,6 +45,6 @@ Note: The high score feature using the browser's local storage to save the score
 - Two-player score tracker and modes
 - Real-time scoreboard from MLB API
 
-## Authors
+## Creator
 
-- **Brendan Wilson** - [Portfolio](https://bwilson19.github.io)
+**Brendan Wilson** - [Portfolio](https://bwilson19.github.io)

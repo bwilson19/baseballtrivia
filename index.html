@@ -12,6 +12,7 @@
     <title>Baseball Trivia</title>
   </head>
   <body>
+    <!-- Audio files -->
     <audio id="music" loop>
       <source src="sounds/ballgame.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
@@ -24,10 +25,18 @@
       <source src="sounds/boo.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
+    <!-- Header -->
     <header>
       <h1>Baseball Trivia - 2019 Edition</h1>
     </header>
+    <!-- Nav (hidden until start) -->
+    <nav>
+      <button id="directions-button" class="nav-buttons">Directions</button>
+      <button id="restart-button" class="nav-buttons">Restart</button>
+    </nav>
+    <!-- Game box -->
     <main>
+      <!-- Start game screen and directions -->
       <div class="overlay-cover" id="start-game">
         <div id="start-box">
           <p>Click the ball to start the game!</p>
@@ -37,7 +46,7 @@
             alt="Spinning Baseball"
           />
         </div>
-        <div id="directions">
+        <div id="directions-start">
           <h2>Directions</h2>
           <ul>
             <li>Score 10 runs before making 3 outs.</li>
@@ -47,15 +56,36 @@
             </li>
             <li>Each incorrect answer is an out.</li>
             <li>
-              Keep an eye on <span style="color: red; font-weight: 1000">the pitch clock</span>, you only have 20 seconds to answer each question!
+              Keep an eye on
+              <span style="color: red; font-weight: 1000">the pitch clock</span
+              >, you only have 20 seconds to answer each question!
             </li>
           </ul>
         </div>
       </div>
+       <div class="overlay-cover" id="directions-menu">
+          <h2>Directions</h2>
+          <ul>
+            <li>Score 10 runs before making 3 outs.</li>
+            <li>
+              Each correct answer is a base hit (remember: you'll need to fill
+              the bases before you start scoring runs).
+            </li>
+            <li>Each incorrect answer is an out.</li>
+            <li>
+              Keep an eye on
+              <span style="color: red; font-weight: 1000">the pitch clock</span
+              >, you only have 20 seconds to answer each question!
+            </li>
+          </ul>
+        </div>
+
+      <!-- End game screen after victory -->
       <div class="overlay-cover" id="end-game">
         <p>You scored 10 runs! Want to play again?</p>
         <button class="restart" id="restart-win">Restart</button>
       </div>
+      <!-- Baseball diamond window w/scoreboard and highscore -->
       <div id="field-box">
         <div id="diamond">
           <div id="scoreboard">
@@ -76,13 +106,16 @@
           <div id="pitch-clock">:20</div>
         </div>
       </div>
-      <div id="player-win" class="result-box">
-        <p>You Win!</p>
+      <!-- Result boxes (hit or game over) -->
+      <div id="next-overlay" class="result-box">
+        <p>Correct! Single!</p>
+        <button id="next">Next Question</button>
       </div>
       <div id="player-loss" class="result-box">
         <p>You Lose!</p>
         <button class="restart" id="restart-loss">Restart</button>
       </div>
+      <!-- Question boxes start (1-13) -->
       <div id="question1" class="trivia-box">
         <div class="question">
           <p>Who was the NL MVP?</p>
@@ -359,7 +392,7 @@
       <div id="question13" class="trivia-box">
         <div class="question">
           <p>
-            FINAL QUESTION: Who led the league in OPS?
+            Who led the league in OPS?
           </p>
         </div>
         <div class="answers">
@@ -387,13 +420,11 @@
           </ul>
         </div>
       </div>
-      <div id="next-overlay" class="result-box">
-        <p>Correct! Single!</p>
-        <button id="next">Next Question</button>
-      </div>
     </main>
     <footer>
-      <p id="copyright"><a href="http://bwilson19.github.io">&copy; Brendan Wilson</a></p>
+      <p id="copyright">
+        <a href="http://bwilson19.github.io">&copy; Brendan Wilson</a>
+      </p>
     </footer>
     <script src="script.js"></script>
   </body>

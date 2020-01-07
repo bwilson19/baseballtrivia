@@ -21,6 +21,10 @@ const highScoreCounter = document.querySelector('#high-score');
 const clearHighScoreButton = document.querySelector('#clear-score');
 const winScreen = document.querySelector('#end-game');
 const pitchClock = document.querySelector('#pitch-clock');
+const nav = document.querySelector('nav');
+const restartButton = document.querySelector('#restart-button');
+const directionsButton = document.querySelector('#directions-button');
+const directionsMenu = document.querySelector('#directions-menu');
 
 let currentRuns = 0;
 let currentOuts = 0;
@@ -173,8 +177,10 @@ function playerOut(evt) {
   }
 }
 
-// restart game option after 3 outs
+// restart game option or after button click
+
 restartLoss.addEventListener('click', restartGame);
+restartButton.addEventListener('click', restartGame);
 
 function restartGame() {
   triviaBox[0].style.zIndex = zIndex + 3;
@@ -190,6 +196,7 @@ function restartGame() {
   fieldNumber = 0;
   highScoreCounter.innerHTML = 'High Score: ' + highScore;
   winScreen.style.display = 'none';
+  nav.style.display = 'none';
   startGameOverlay.style.display = 'flex';
   for (let i = 0; i < losers.length; i++) {
     losers[i].style.color = 'white';
@@ -215,6 +222,19 @@ function startGame() {
   music.play();
   music.volume = 0.1;
   resetClock();
+  nav.style.display = 'block';
+}
+
+// directions menu overlay
+
+directionsButton.addEventListener('click', directionsMenuToggle);
+
+function directionsMenuToggle() {
+  if (directionsMenu.style.display === 'none') {
+    directionsMenu.style.display = 'flex';
+  } else {
+    directionsMenu.style.display = 'none';
+  }
 }
 
 // mute/play background music
