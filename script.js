@@ -77,83 +77,83 @@ let question3 = new Question(
 );
 
 let question4 = new Question(
-  'Who was the AL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Who was the NL Cy Young winner?',
+  '<img src="images/degrom.jpg" alt="Jacob deGrom" />Jacob deGrom',
+  '<img src="images/bumgarner.jpg" alt="Madison Bumgarner" />Madison Bumgarner',
+  '<img src="images/kershaw.jpg" alt="Clayton Kershaw" />Clayton Kershaw',
+  '<img src="images/ryu.jpg" alt="Hyun-Jin Ryu" />Hyun-Jin Ryu'
 );
 
 let question5 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Who was the AL Cy Young winner?',
+  '<img src="images/verlander.jpg" alt="Justin Verlander" />Justin Verlander',
+  '<img src="images/bieber.jpg" alt="Shane Bieber" />Shane Bieber',
+  '<img src="images/snell.jpg" alt="Blake Snell" />Blake Snell',
+  '<img src="images/cole.jpg" alt="Gerrit Cole" />Gerrit Cole'
 );
 
 let question6 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Which player led the league in home runs?',
+  '<img src="images/alonso.jpg" alt="Pete Alonso" />Pete Alonso',
+  '<img src="images/soler.jpg" alt="Jorge Soler" />Jorge Soler',
+  '<img src="images/yelich.jpg" alt="Christian Yelich" />Christian Yelich',
+  '<img src="images/bellinger.jpg" alt="Cody Bellinger" />Cody Bellinger'
 );
 
 let question7 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Which pitcher led the league in strikeouts?',
+  '<img src="images/cole.jpg" alt="Gerrit Cole" />Gerrit Cole',
+  '<img src="images/ray.jpg" alt="Robbie Ray" />Robbie Ray',
+  '<img src="images/scherzer.jpg" alt="Max Scherzer" />Max Scherzer',
+  '<img src="images/verlander.jpg" alt="Justin Verlander" />Justin Verlander'
 );
 
 let question8 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Which closer the league in saves?',
+  '<img src="images/yates.jpg" alt="Kirby Yates" />Kirby Yates',
+  '<img src="images/chapman.jpg" alt="Aroldis Chapman" />Aroldis Chapman',
+  '<img src="images/hader.jpg" alt="Josh Hader" />Josh Hader',
+  '<img src="images/smith.jpg" alt="Will Smith" />Will Smith'
 );
 
 let question9 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Who was the NL Rookie of the Year?',
+  '<img src="images/alonso.jpg" alt="Pete Alonso" />Pete Alonso',
+  '<img src="images/soroka.jpg" alt="Mike Soroka" />Mike Soroka',
+  '<img src="images/robles.jpg" alt="Victor Robles" />Victor Robles',
+  '<img src="images/tatis.jpg" alt="Fernando Tatis Jr." />Fernando Tatis Jr.'
 );
 
 let question10 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Who was the AL Rookie of the Year?',
+  '<img src="images/alvarez.jpg" alt="Yordan Alvarez" />Yordan Alvarez',
+  '<img src="images/mercado.jpg" alt="Oscar Mercado" />Oscar Mercado',
+  '<img src="images/vladdy.jpg" alt="Vlad Guerrero Jr." />Vlad Guerrero Jr.',
+  '<img src="images/means.jpg" alt="John Means" />John Means'
 );
 
 let question11 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Who was the NL Manager of the Year?',
+  '<img src="images/shildt.jpg" alt="Mike Shildt" />Mike Shildt',
+  '<img src="images/martinez.jpg" alt="Dave Martinez" />Dave Martinez',
+  '<img src="images/counsell.jpg" alt="Craig Counsell" />Craig Counsell',
+  '<img src="images/bochy.jpg" alt="Bruce Bochy" />Bruce Bochy'
 );
 
 let question12 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Who was the AL Manager of the Year?',
+  '<img src="images/baldelli.jpg" alt="Rocco Baldelli" />Rocco Baldelli',
+  '<img src="images/hinch.jpg" alt="A.J. Hinch" />A.J. Hinch',
+  '<img src="images/boone.jpg" alt="Aaron Boone" />Aaron Boone',
+  '<img src="images/melvin.jpg" alt="Bob Melvin" />Bob Melvin'
 );
 
 let question13 = new Question(
-  'Who was the NL Cy Young?',
-  'Mike Trout',
-  'Jacob DeGrom',
-  'Nolan Arenado',
-  'Christian Yelich'
+  'Who led the league in OPS (On-base plus slugging)?',
+  '<img src="images/yelich.jpg" alt="Christian Yelich" />Christian Yelich',
+  '<img src="images/bellinger.jpg" alt="Cody Bellinger" />Cody Bellinger',
+  '<img src="images/trout.jpg" alt="Mike Trout" />Mike Trout',
+  '<img src="images/bregman.jpg" alt="Alex Bregman" />Alex Bregman'
 );
 
 let questionArray = [
