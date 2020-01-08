@@ -13,8 +13,10 @@ const lossResult = document.querySelector('#player-loss');
 const restartLoss = document.querySelector('#restart-loss');
 const restartWin = document.querySelector('#restart-win');
 const field = document.querySelector('#field');
-const nextButton = document.querySelector('#next');
-const nextOverlay = document.querySelector('#next-overlay');
+const nextButtonHit = document.querySelector('#nextHit');
+const nextButtonOut = document.querySelector('#nextOut');
+const hitOverlay = document.querySelector('#hit-overlay');
+const outOverlay = document.querySelector('#out-overlay');
 const startGameButton = document.querySelector('#start');
 const startGameOverlay = document.querySelector('#start-game');
 const music = document.querySelector('#music');
@@ -156,6 +158,14 @@ let question13 = new Question(
   '<img src="images/bregman.jpg" alt="Alex Bregman" />Alex Bregman'
 );
 
+let question14 = new Question(
+  'Who led the league in stolen bases?',
+  '<img src="images/acuna.jpg" alt="Ronald Acuna Jr." />Ronald Acuna Jr.',
+  '<img src="images/turner.jpg" alt="Trea Turner" />Trea Turner',
+  '<img src="images/gordon.jpg" alt="Dee Gordon" />Mike Trout',
+  '<img src="images/villar.jpg" alt="Jonathan Villar" />Alex Bregman'
+);
+
 let questionArray = [
   question1,
   question2,
@@ -169,7 +179,8 @@ let questionArray = [
   question10,
   question11,
   question12,
-  question13
+  question13,
+  question14
 ];
 
 let questionTracker = [];
@@ -182,7 +193,8 @@ wrongField1.addEventListener('click', playerOut);
 wrongField2.addEventListener('click', playerOut);
 wrongField3.addEventListener('click', playerOut);
 restartButton.addEventListener('click', restartGame);
-nextButton.addEventListener('click', resetOverlay);
+nextButtonOut.addEventListener('click', resetOverlay);
+nextButtonHit.addEventListener('click', resetOverlay);
 startGameButton.addEventListener('click', startGame);
 restartWin.addEventListener('click', restartGame);
 closeWindowButton.addEventListener('click', closeWindow);
@@ -203,8 +215,8 @@ function generateQuestion() {
   wrongField3.innerHTML = questionArray[currentQuestionNumber].wrong3;
   questionTracker.push(questionArray[currentQuestionNumber]);
   questionArray.splice(currentQuestionNumber, 1);
-  console.log(questionArray);
-  console.log(questionTracker);
+  // console.log(questionArray);
+  // console.log(questionTracker);
   // below from https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order
   for (var i = multiple.children.length; i >= 0; i--) {
     multiple.appendChild(multiple.children[(Math.random() * i) | 0]);
@@ -296,7 +308,7 @@ function playerHit() {
     }
     currentHits + 1;
     hits.innerHTML = 'Hits: ' + (currentHits += 1);
-    nextOverlay.style.zIndex = 3;
+    hitOverlay.style.zIndex = 3;
     hitSound.play();
     hitSound.volume = 0.2;
     pitchClock.innerHTML = 'Run!';
@@ -307,21 +319,12 @@ function playerHit() {
     currentRunners += 1;
     fieldNumber += 1;
     field.setAttribute('src', fieldOptions[fieldNumber]);
-    nextOverlay.style.zIndex = 3;
+    hitOverlay.style.zIndex = 3;
     hitSound.play();
     hitSound.volume = 0.2;
     pitchClock.innerHTML = 'Hit!';
     stopClock();
   }
-}
-
-// if user scores 10 runs, display win screen and restart option
-
-function tenRuns() {
-  winScreen.style.display = 'block';
-  currentRuns + 1;
-  highScore = 10;
-  localStorage.setItem('highScore', highScore);
 }
 
 //if answer is incorrect
@@ -331,6 +334,7 @@ function playerOut(evt) {
     outs.innerHTML = 'Outs: ' + currentOuts;
     booSound.play();
     booSound.volume = 0.2;
+    outOverlay.style.zIndex = 3;
     // evt.target.style.color = 'red';
     // evt.target.style.textDecoration = 'line-through';
     pitchClock.innerHTML = 'Out!';
@@ -364,6 +368,8 @@ function restartGame() {
   winScreen.style.display = 'none';
   nav.style.display = 'none';
   startGameOverlay.style.display = 'flex';
+  hitOverlay.style.zIndex = 0;
+  outOverlay.style.zIndex = 0;
   resetQuestions();
 }
 
@@ -371,12 +377,18 @@ function restartGame() {
 
 function resetOverlay() {
   if (currentRuns < 10) {
-    nextOverlay.style.zIndex = 0;
+    hitOverlay.style.zIndex = 0;
+    outOverlay.style.zIndex = 0;
     multiple.style.color = 'white';
     multiple.style.textDecoration = 'none';
     resetClock();
     startClock();
     generateQuestion();
+  } else {
+    winScreen.style.display = 'block';
+    currentRuns + 1;
+    highScore = 10;
+    localStorage.setItem('highScore', highScore);
   }
 }
 

@@ -83,9 +83,10 @@
       </div>
 
       <!-- End game screen after victory -->
-      <div class="overlay-cover" id="end-game">
+      <div class="overlay-cover" id="end-game" style="display:flex">
         <p>You scored 10 runs! Want to play again?</p>
         <button class="restart" id="restart-win">Restart</button>
+        <img class="overlay-images" src="images/win.gif" alt="Win!" />
       </div>
       <!-- Baseball diamond window w/scoreboard and highscore -->
       <div id="field-box">
@@ -108,14 +109,21 @@
           <div id="pitch-clock">:20</div>
         </div>
       </div>
-      <!-- Result boxes (hit or game over) -->
-      <div id="next-overlay" class="result-box">
+      <!-- Result boxes (hit, out, or game over) -->
+      <div id="hit-overlay" class="result-box">
         <p>Correct! Single!</p>
-        <button id="next">Next Question</button>
+        <button id="nextHit">Next Question</button>
+        <img class="overlay-images" src="images/hit.gif" alt="Hit!" />
+      </div>
+      <div id="out-overlay" class="result-box">
+        <p>Wrong! That's an out!</p>
+        <button id="nextOut">Next Question</button>
+        <img class="overlay-images" src="images/out.gif" alt="Out!" />
       </div>
       <div id="player-loss" class="result-box">
-        <p>You Lose!</p>
+        <p>3 Outs, You Lose!<br /><br />Want to play again?</p>
         <button class="restart" id="restart-loss">Restart</button>
+        <img class="overlay-images" src="images/loss.gif" alt="Loss!" />
       </div>
       <!-- Question box -->
       <div class="trivia-box">
@@ -124,275 +132,13 @@
         </div>
         <div class="answers">
           <ul class="multiple-choice">
-            <li class="correct">
-            </li>
-            <li class="wrong1">
-            </li>
-            <li class="wrong2">
-            </li>
-            <li class="wrong3">
-            </li>
+            <li class="correct"></li>
+            <li class="wrong1"></li>
+            <li class="wrong2"></li>
+            <li class="wrong3"></li>
           </ul>
         </div>
       </div>
-      <!-- <div id="question3" class="trivia-box">
-        <div class="question">
-          <p>Who won the World Series?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/yankees.png" alt="New York Yankees" />New York
-              Yankees
-            </li>
-            <li class="loser">
-              <img src="images/astros.png" alt="Houston Astros" />Houston Astros
-            </li>
-            <li class="winner">
-              <img
-                src="images/nationals.png"
-                alt="Washington Nationals"
-              />Washington Nationals
-            </li>
-            <li class="loser">
-              <img src="images/giants.png" alt="San Francisco Giants" />San
-              Francisco Giants
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question4" class="trivia-box">
-        <div class="question">
-          <p>Who was the NL Cy Young winner?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="winner">
-              <img src="images/degrom.jpg" alt="Jacob deGrom" />Jacob deGrom
-            </li>
-            <li class="loser">
-              <img src="images/bumgarner.jpg" alt="Madison Bumgarner" />Madison
-              Bumgarner
-            </li>
-            <li class="loser">
-              <img src="images/kershaw.jpg" alt="Clayton Kershaw" />Clayton
-              Kershaw
-            </li>
-            <li class="loser">
-              <img src="images/ryu.jpg" alt="Hyun-Jin Ryu" />Hyun-Jin Ryu
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question5" class="trivia-box">
-        <div class="question">
-          <p>Who was the AL Cy Young winner?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/snell.jpg" alt="Blake Snell" />Blake Snell
-            </li>
-            <li class="loser">
-              <img src="images/bieber.jpg" alt="Shane Bieber" />Shane Bieber
-            </li>
-            <li class="winner">
-              <img src="images/verlander.jpg" alt="Justin Verlander" />Justin
-              Verlander
-            </li>
-            <li class="loser">
-              <img src="images/cole.jpg" alt="Gerrit Cole" />Gerrit Cole
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question6" class="trivia-box">
-        <div class="question">
-          <p>Which player led the league in home runs?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="winner">
-              <img src="images/alonso.jpg" alt="Pete Alonso" />Pete Alonso
-            </li>
-            <li class="loser">
-              <img src="images/soler.jpg" alt="Jorge Soler" />Jorge Soler
-            </li>
-            <li class="loser">
-              <img src="images/yelich.jpg" alt="Christian Yelich" />Christian
-              Yelich
-            </li>
-            <li class="loser">
-              <img src="images/bellinger.jpg" alt="Cody Bellinger" />Cody
-              Bellinger
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question7" class="trivia-box">
-        <div class="question">
-          <p>Which pitcher led the league in strikeouts?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/verlander.jpg" alt="Justin Verlander" />Justin
-              Verlander
-            </li>
-            <li class="winner">
-              <img src="images/cole.jpg" alt="Gerrit Cole" />Gerrit Cole
-            </li>
-            <li class="loser">
-              <img src="images/ray.jpg" alt="Robbie Ray" />Robbie Ray
-            </li>
-            <li class="loser">
-              <img src="images/scherzer.jpg" alt="Max Scherzer" />Max Scherzer
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question8" class="trivia-box">
-        <div class="question">
-          <p>Which closer the league in saves?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/smith.jpg" alt="Will Smith" />Will Smith
-            </li>
-            <li class="loser">
-              <img src="images/hader.jpg" alt="Josh Hader" />Josh Hader
-            </li>
-            <li class="loser">
-              <img src="images/chapman.jpg" alt="Aroldis Chapman" />Aroldis
-              Chapman
-            </li>
-            <li class="winner">
-              <img src="images/yates.jpg" alt="Kirby Yates" />Kirby Yates
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question9" class="trivia-box">
-        <div class="question">
-          <p>Who was the NL Rookie of the Year?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/soroka.jpg" alt="Mike Soroka" />Mike Soroka
-            </li>
-            <li class="loser">
-              <img src="images/tatis.jpg" alt="Fernando Tatis Jr." />Fernando
-              Tatis Jr.
-            </li>
-            <li class="winner">
-              <img src="images/alonso.jpg" alt="Pete Alonso" />Pete Alonso
-            </li>
-            <li class="loser">
-              <img src="images/robles.jpg" alt="Victor Robles" />Victor Robles
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question10" class="trivia-box">
-        <div class="question">
-          <p>Who was the AL Rookie of the Year?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/mercado.jpg" alt="Oscar Mercado" />Oscar Mercado
-            </li>
-            <li class="winner">
-              <img src="images/alvarez.jpg" alt="Yordan Alvarez" />Yordan
-              Alvarez
-            </li>
-            <li class="loser">
-              <img src="images/vladdy.jpg" alt="Vlad Guerrero Jr." />Vlad
-              Guerrero Jr.
-            </li>
-            <li class="loser">
-              <img src="images/means.jpg" alt="John Means" />John Means
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question11" class="trivia-box">
-        <div class="question">
-          <p>Who was the NL Manager of the Year?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/counsell.jpg" alt="Craig Counsell" />Craig
-              Counsell
-            </li>
-            <li class="winner">
-              <img src="images/shildt.jpg" alt="Mike Shildt" />Mike Shildt
-            </li>
-            <li class="loser">
-              <img src="images/bochy.jpg" alt="Bruce Bochy" />Bruce Bochy
-            </li>
-            <li class="loser">
-              <img src="images/martinez.jpg" alt="Dave Martinez" />Dave Martinez
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question12" class="trivia-box">
-        <div class="question">
-          <p>Who was the AL Manager of the Year?</p>
-        </div>
-        <div class="answers">
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/hinch.jpg" alt="A.J. Hinch" />A.J. Hinch
-            </li>
-            <li class="loser">
-              <img src="images/boone.jpg" alt="Aaron Boone" />Aaron Boone
-            </li>
-            <li class="loser">
-              <img src="images/melvin.jpg" alt="Bob Melvin" />Bob Melvin
-            </li>
-            <li class="winner">
-              <img src="images/baldelli.jpg" alt="Rocco Baldelli" />Rocco
-              Baldelli
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="question13" class="trivia-box">
-        <div class="question">
-          <p>
-            Who led the league in OPS?
-          </p>
-        </div>
-        <div class="answers">
-          <ul class="images">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <ul class="multiple-choice">
-            <li class="loser">
-              <img src="images/trout.jpg" alt="Mike Trout" />Mike Trout
-            </li>
-            <li class="winner">
-              <img src="images/yelich.jpg" alt="Christian Yelich" />Christian
-              Yelich
-            </li>
-            <li class="loser">
-              <img src="images/bellinger.jpg" alt="Cody Bellinger" />Cody
-              Bellinger
-            </li>
-            <li class="loser">
-              <img src="images/bregman.jpg" alt="Alex Bregman" />Alex Bregman
-            </li>
-          </ul>
-        </div>
-      </div> --> -->
     </main>
     <footer>
       <p id="copyright">

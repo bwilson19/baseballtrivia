@@ -97,6 +97,7 @@ header {
   text-align: center;
   right: 10%;
   color: white;
+  overflow: auto;
 }
 
 .question-box {
@@ -157,10 +158,23 @@ header {
   flex-direction: row;
 }
 
-#next-overlay {
+#hit-overlay {
   background-color: rgb(18, 139, 2, 0.95);
   font-size: 30px;
   text-align: center;
+}
+
+#out-overlay {
+  background-color: rgba(214, 51, 51, 0.95);
+  font-size: 30px;
+  text-align: center;
+}
+
+.overlay-images {
+  width: 70%;
+  max-height: 60%;
+  margin-top: 10%;
+  box-shadow: 2px 2px 3px black;
 }
 
 .overlay-cover {
@@ -189,8 +203,20 @@ header {
 }
 
 #end-game {
-  display: none;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+#end-game img {
+  width: 40%;
+  margin-top: 5%;
+}
+
+#end-game button {
+  margin-top: 1%;
 }
 
 #start {
