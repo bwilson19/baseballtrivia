@@ -36,7 +36,9 @@ Have fun, and good luck!
 
 v2 - Using OOP methodology in Javascript, primarily by making a class for the questions, with a constructor for right and wrong answers. Each question and answer object is placed into a single question box (shortening the length of the HTML considerably), and the order of the answer is randomized each time.
 
-This allows for much higher scalability for new questions to be added over time, as well as setting up new features like 'levels' that raise the difficulty
+This allows for much higher scalability for new questions to be added over time, as well as setting up new features like 'levels' that raise the difficulty.
+
+**Note: The high score feature using the browser's local storage to save the score variable, so it doesn't track across browsers or environments.**
 
 ### Past Version
 
@@ -44,11 +46,7 @@ v1 - This game was built using the above technologies,using primarily DOM manipu
 
 An alternate version may be added later that uses OOP in the Javascript build to allow for higher scaling as more questions are added.
 
-### Please Note
-
-The high score feature using the browser's local storage to save the score variable, so it doesn't track across browsers or environments.
-
-### Future Versions
+### Future Updates
 
 - Adding an inning function ('levels') to raise difficulty throughout the game
 - Two-player score tracker and modes

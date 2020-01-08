@@ -385,7 +385,7 @@ function resetOverlay() {
     startClock();
     generateQuestion();
   } else {
-    winScreen.style.display = 'block';
+    winScreen.style.display = 'flex';
     currentRuns + 1;
     highScore = 10;
     localStorage.setItem('highScore', highScore);
