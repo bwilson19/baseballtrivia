@@ -166,6 +166,22 @@ let question14 = new Question(
   '<img src="images/villar.jpg" alt="Jonathan Villar" />Alex Bregman'
 );
 
+let question15 = new Question(
+  'Which team finished with the best record in the regular season?',
+  '<img src="images/astros.png" alt="Houston Astros" />Houston Astros',
+  '<img src = "images/nationals.png" alt = "Washington Nationals" /> Washington Nationals',
+  '<img src="images/yankees.png" alt="New York Yankees" />New York Yankees',
+  '<img src="images/dodgers.png" alt="Los Angeles Dodgers" />Los Angeles Dodgers'
+);
+
+let question16 = new Question(
+  'Which 2018 championship team failed to make the playoffs in 2019?',
+  '<img src ="images/redsox.png" alt = "Boston Red Sox" />Boston Red Sox',
+  '<img src="images/astros.png" alt="Houston Astros" />Houston Astros',
+  '<img src="images/yankees.png" alt="New York Yankees" />New York Yankees',
+  '<img src="images/dodgers.png" alt="Los Angeles Dodgers" />Los Angeles Dodgers'
+);
+
 let questionArray = [
   question1,
   question2,
@@ -180,7 +196,9 @@ let questionArray = [
   question11,
   question12,
   question13,
-  question14
+  question14,
+  question15,
+  question16
 ];
 
 let questionTracker = [];
@@ -231,8 +249,6 @@ function resetQuestions() {
     questionTracker.splice(i, 1);
     i--;
   }
-  console.log(questionArray);
-  console.log(questionTracker);
 }
 
 // preserve high score across sessions & clear score button

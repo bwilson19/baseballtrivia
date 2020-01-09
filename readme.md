@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-This game should be run on Google Chrome on a desktop for best results, but will work fine on any browser. The game is also fully mobile-responsive.
+This game should be run on Google Chrome on a desktop for best results, but will work fine on any browser and is also fully mobile-responsive.
 
 ## Game Instructions
 
