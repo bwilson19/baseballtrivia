@@ -668,11 +668,12 @@ button:hover::after {
   }
 
   .overlay-cover {
-    width: 85%;
+    width: 90%;
     top: 3%;
-    height: 130%;
+    height: 150%;
     right: 10%;
     left: 7.5%;
+    overflow: auto;
   }
   #scoreboard {
     font-size: 15px;
